@@ -27,4 +27,28 @@ The application provides core social functionalities such as user authentication
    git clone https://github.com/yourusername/Social-Media-Platform.git
 
 2. Navigate to the backend directory and install dependencies:
-git clone https://github.com/yourusername/Social-Media-Platform.git
+
+   ```bash
+   cd Social-Media-Platform/node-rest-api
+   npm install
+
+3. Set up your MongoDB database and configure your environment variables (.env)
+
+4. Start the backend server
+   To keep the service running continuously and not dependent on the terminal, you can use pm2
+   
+   ```bash
+   npm run dev
+   
+   pm2 start index.js
+
+5. Navigate to the frontend directory and install dependencies:
+   
+   ```bash
+   cd Social-Media-Platform/social-media-platform
+   npm install
+
+6. Start the frontend development server:
+   
+   ```bash
+   npm run dev
