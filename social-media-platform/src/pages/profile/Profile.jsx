@@ -19,12 +19,12 @@ const Profile = () => {
   const [user, setUser] = useState({});
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(`/api/users/${post.userId}`);
-      console.log(res.data);
+      const res = await axios.get(`/api/users?username=cherry`);
+      //console.log(res.data);
       setUser(res.data);
     }
     fetchUser();
-  }, [post.userId]);
+  }, []);
 
   return (
     <>
@@ -38,8 +38,8 @@ const Profile = () => {
               <img className="profileUserImg" src={`${PF}person/7.jpeg`} alt="" />
             </div>
             <div className="profileInfo">
-              <h4 className="profileInfoName">Pola Foseter</h4>
-              <span className="profileInfoDesc">Hello my friends!</span>
+              <h4 className="profileInfoName">{user.username}</h4>
+              <span className="profileInfoDesc">Hello</span>
             </div>
           </div>
           <div className="profileRightBottom">
