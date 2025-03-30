@@ -1,5 +1,5 @@
 import React from 'react'
-import './closeFriend.css'
+import './closefriend.css'
 
 const CloseFriend = ({ user }) => {
   const PF = import.meta.env.VITE_PUBLIC_FOLDER;
