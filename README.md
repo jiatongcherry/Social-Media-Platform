@@ -21,11 +21,11 @@ The application provides core social functionalities such as user authentication
 
 ## Live Demo
 
-  You can view a live demo of the application at: [Live Demo](http://47.236.113.174:5173/)
+  You can view a live demo of the application at : [Live Demo](http://47.236.113.174:5173/)
 
 ## API Documentation
 
-  You can view the API documentation at: [Swagger UI](http://47.236.113.174:8800/api-docs)
+   You can view the API documentation at : [Swagger UI](http://47.236.113.174:8800/api-docs)
 
 ## Installation
 
