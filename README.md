@@ -42,7 +42,7 @@ The application provides core social functionalities such as user authentication
 
 3. Set up your MongoDB database and configure your environment variables (.env)
 
-4. Start the backend server
+4. Start the backend server:
    To keep the service running continuously and not dependent on the terminal, you can use pm2
    
    ```bash
@@ -57,6 +57,9 @@ The application provides core social functionalities such as user authentication
    npm install
 
 6. Start the frontend development server:
+   To keep the service running continuously and not dependent on the terminal, you can use pm2
    
    ```bash
    npm run dev
+   
+   pm2 start ecosystem.config.cjs
