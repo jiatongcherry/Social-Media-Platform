@@ -33,7 +33,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: "http://localhost:8800/api",
+        url: "http://47.236.113.174:8800/api",
       },
     ],
   },
@@ -47,7 +47,9 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
-app.use(cors());
+app.use(cors({
+  origin: '*', // allow all origins
+}));
 
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
