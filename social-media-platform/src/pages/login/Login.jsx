@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import './login.css'
 import axios from 'axios'
-
+import { UserContext } from '../../UserContext';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { CurrentUser, setCurrentUser } = useContext(UserContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,6 +14,9 @@ const Login = () => {
     try {
       const response = await axios.post('/api/auth/login', { email, password, });
       alert('Login successful!');
+      setCurrentUser(userData);
+
+      console.log(CurrentUser);
     } catch (error) {
       if (error.response) {
         const message = error.response.status === 404
@@ -36,11 +40,11 @@ const Login = () => {
         </div>
         <div className="loginRight">
           <div className="loginBox">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='loginForm'>
               <input
                 type="email"
                 placeholder="Email"
-                className="loginInput"
+                className="loginEmail"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -48,7 +52,7 @@ const Login = () => {
               <input
                 type="password"
                 placeholder="Password"
-                className="loginInput"
+                className="loginPwd"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
