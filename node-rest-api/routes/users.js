@@ -136,13 +136,13 @@ in frontend Profile.jsx we need to get user info but the url only contains name
 below we can use either userId or username to locate user
 */
 router.get("/", async (req, res) => {
-  //lh:8800/api/users?userId=123asb2
+  //lh:8800/api/users?userId=67ea749
   //lh:8800/api/users?username=cherry
   const userId = req.query.userId;
   const username = req.query.username;
   try {
     const user = userId
-    ? await User.findById(req.params.id)
+    ? await User.findById(userId)
     : await User.findOne({username: username});
 
     //don't show unnecessary info

@@ -3,7 +3,7 @@ import './rightbar.css'
 import { Users } from '../../dummyData'
 import Online from '../../online/Online'
 
-const Rightbar = ({ profile }) => {
+const Rightbar = ({ user }) => {
   const PF = import.meta.env.VITE_PUBLIC_FOLDER;
 
   const HomeRightbar = () => {
@@ -34,15 +34,11 @@ const Rightbar = ({ profile }) => {
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">City:</span>
-            <span className="rightabrInfoValue">New York</span>
+            <span className="rightabrInfoValue">{user.city}</span>
           </div>
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">From:</span>
-            <span className="rightabrInfoValue">LA</span>
-          </div>
-          <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">Relationship:</span>
-            <span className="rightabrInfoValue">single</span>
+            <span className="rightabrInfoValue">{user.from}</span>
           </div>
         </div >
         <h4 className="rightbarTitle">User friends</h4>
@@ -52,19 +48,19 @@ const Rightbar = ({ profile }) => {
             <span className="rightbarFollowingName">John Carter</span>
           </div>
         </div >
-        </>
-      
-  )
+      </>
+
+    )
 
   }
 
-return (
-  <div className='rightbar'>
-    <div className="rightbarWrapper">
-      {profile? < ProfileRightbar /> : <HomeRightbar />}
+  return (
+    <div className='rightbar'>
+      <div className="rightbarWrapper">
+        {user ? < ProfileRightbar /> : <HomeRightbar />}
+      </div>
     </div>
-  </div>
-)
+  )
 
 }
 
