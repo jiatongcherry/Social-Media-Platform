@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './share.css'
 import PermMedia from '@mui/icons-material/PermMedia';
 import Label from '@mui/icons-material/Label';
 import Room from '@mui/icons-material/Room';
 import EmojiEmotions from '@mui/icons-material/EmojiEmotions';
+import { UserContext } from '../../UserContext';
 
 const Share = () => {
+  const { currentUser } = useContext(UserContext);
+
   return (
     <div className='share'>
       <div className="shareWrapper">
         <div className="shareTop">
-          <img className="shareProfileImg" src="/assets/person/1.jpeg" alt="" />
+          <img className="shareProfileImg" src={currentUser.profilePicture} alt="" />
           <input
             placeholder="What's in your mind?"
             className="shareInput"

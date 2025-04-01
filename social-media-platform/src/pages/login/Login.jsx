@@ -14,6 +14,7 @@ const Login = () => {
 
     try {
       const response = await axios.post('/api/auth/login', { email, password, });
+      localStorage.setItem('currentUser', JSON.stringify(response.data));
       setCurrentUser(response.data);
       navigate('/'); //React Router hook
     } catch (error) {

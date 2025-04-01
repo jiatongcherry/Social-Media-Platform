@@ -40,7 +40,7 @@ const Profile = () => {
           <div className="profileRightTop">
             <div className="profileCover">
               <img className="profileCoverImg" src={user.coverPicture || PF + "post/3.jpeg"} alt="" />
-              <img className="profileUserImg" src={user.profilePicture || PF + "post/5.jpeg"} alt="" />
+              <img className="profileUserImg" src={user.profilePicture || PF + "person/5.jpeg"} alt="" />
             </div>
             <div className="profileInfo">
               <h4 className="profileInfoName">{user.username}</h4>

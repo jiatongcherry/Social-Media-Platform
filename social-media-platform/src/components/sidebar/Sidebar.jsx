@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './sidebar.css'
 import RssFeed from '@mui/icons-material/RssFeed';
 import Chat from '@mui/icons-material/Chat';
@@ -9,10 +9,34 @@ import HelpOutline from '@mui/icons-material/HelpOutline';
 import WorkOutline from '@mui/icons-material/WorkOutline';
 import Event from '@mui/icons-material/Event';
 import School from '@mui/icons-material/School';
-import { Users } from '../../dummyData'
 import CloseFriend from '../closeFriend/CloseFriend';
+import { UserContext } from '../../UserContext';
+import axios from 'axios';
 
 const Sidebar = () => {
+  const { currentUser } = useContext(UserContext);
+  const [friends, setFriends] = useState([]);
+
+  useEffect(() => {
+    const fetchFriends = async () => {
+      if (currentUser.followings.length > 0) {
+        try {
+          const friendRequests = currentUser.followings.map(friendId =>
+            axios.get('/api/users', { params: { userId: friendId } })
+          );
+
+          const responses = await Promise.all(friendRequests);
+          const friendsData = responses.map(response => response.data);
+          setFriends(friendsData);
+        } catch (error) {
+          console.error("Error fetching friends:", error);
+        }
+      }
+    };
+
+    fetchFriends();
+  }, [currentUser.followings]);
+
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
@@ -54,14 +78,14 @@ const Sidebar = () => {
             <span className="sidebarListItemText">Courses</span>
           </li>
         </ul>
-    <button className='sidebarButton'>Show More</button>
+        <button className='sidebarButton'>Show More</button>
         <hr className="sidebarHr" />
-      <ul className="sidebarFriendList">
-        {Users.map((u) => (
-          <CloseFriend key={u.id} user={u} />
-        ))}
-        
-      </ul>
+        <ul className="sidebarFriendList">
+          {friends.map((friend) => (
+            <CloseFriend key={friend.id} user={friend} />
+          ))}
+
+        </ul>
       </div>
     </div>
   )
