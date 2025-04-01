@@ -23,7 +23,6 @@ const Post = ({ post }) => {
   useEffect(() => {
     const fetchUser = async () => {
       const res = await axios.get(`/api/users?userId=${post.userId}`);
-      console.log(res.data);
       setUser(res.data);
     }
     fetchUser();
@@ -34,6 +33,8 @@ const Post = ({ post }) => {
     setLike(isLiked ? like - 1 : like + 1);
     setIsLiked(!isLiked);
   }
+
+  //<Link> is used for routing
   return (
     <div className='post'>
       <div className="postWrapper">

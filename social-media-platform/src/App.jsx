@@ -5,6 +5,7 @@ import Login from './pages/login/Login'
 import Register from './pages/register/Register'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { UserProvider } from './UserContext'
+
 const App = () => {
   return (
     <UserProvider>

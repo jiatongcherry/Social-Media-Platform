@@ -2,21 +2,20 @@ import React, { useState, useContext } from 'react'
 import './login.css'
 import axios from 'axios'
 import { UserContext } from '../../UserContext';
+import { useNavigate } from 'react-router-dom'; //for routing
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { CurrentUser, setCurrentUser } = useContext(UserContext);
-
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const response = await axios.post('/api/auth/login', { email, password, });
-      alert('Login successful!');
-      setCurrentUser(userData);
-
-      console.log(CurrentUser);
+      setCurrentUser(response.data);
+      navigate('/'); //React Router hook
     } catch (error) {
       if (error.response) {
         const message = error.response.status === 404
