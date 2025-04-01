@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import "./topbar.css"
 import Search from '@mui/icons-material/Search';
 import Person from '@mui/icons-material/Person';
@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../UserContext';
 
 const Topbar = () => {
+  const PF = import.meta.env.VITE_PUBLIC_FOLDER;
   const { currentUser } = useContext(UserContext);
 
   return (
@@ -45,7 +46,7 @@ const Topbar = () => {
           </div>
 
         </div>
-        <img src={currentUser.profilePicture} alt="" className="topbarImg" />
+        <img src={PF + currentUser.profilePicture} alt="" className="topbarImg" />
       </div>
     </div>
   )

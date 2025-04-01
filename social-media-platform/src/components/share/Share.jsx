@@ -7,13 +7,14 @@ import EmojiEmotions from '@mui/icons-material/EmojiEmotions';
 import { UserContext } from '../../UserContext';
 
 const Share = () => {
+  const PF = import.meta.env.VITE_PUBLIC_FOLDER;
   const { currentUser } = useContext(UserContext);
 
   return (
     <div className='share'>
       <div className="shareWrapper">
         <div className="shareTop">
-          <img className="shareProfileImg" src={currentUser.profilePicture} alt="" />
+          <img className="shareProfileImg" src={PF + currentUser.profilePicture} alt="" />
           <input
             placeholder="What's in your mind?"
             className="shareInput"
