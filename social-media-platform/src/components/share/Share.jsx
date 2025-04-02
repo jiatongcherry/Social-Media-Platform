@@ -1,14 +1,34 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import './share.css'
 import PermMedia from '@mui/icons-material/PermMedia';
 import Label from '@mui/icons-material/Label';
 import Room from '@mui/icons-material/Room';
 import EmojiEmotions from '@mui/icons-material/EmojiEmotions';
 import { UserContext } from '../../UserContext';
+import axios from 'axios';
 
 const Share = () => {
   const PF = import.meta.env.VITE_PUBLIC_FOLDER;
   const { currentUser } = useContext(UserContext);
+  const [post, setPost] = useState({
+    desc: "",
+    img: "",
+    userId: currentUser?._id || "",
+  });
+
+  const handleShare = async () => {
+    try {
+      const res = await axios.post("/api/posts", {
+        userId: currentUser._id,
+        desc: post.desc,
+        img: "",
+      });
+      setPost({ ...post, desc: "" });
+    } catch (error) {
+      console.error("Error sharing post:", error);
+    }
+  };
+
 
   return (
     <div className='share'>
@@ -18,6 +38,8 @@ const Share = () => {
           <input
             placeholder="What's in your mind?"
             className="shareInput"
+            value={post.desc}
+            onChange={(e) => setPost({ ...post, desc: e.target.value })}
           />
         </div>
         <hr className='shareHr' />
@@ -41,7 +63,7 @@ const Share = () => {
               <span className="shareOptionText">Feelings</span>
             </div>
           </div>
-          <button className="shareButton">Share</button>
+          <button className="shareButton" onClick={handleShare}>Share</button>
         </div>
       </div>
 
