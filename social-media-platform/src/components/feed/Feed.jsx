@@ -9,9 +9,7 @@ const Feed = ({ username }) => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = username
-        ? await axios.get('/api/posts/profile/' + username)
-        : await axios.get('/api/posts/timeline/67e6a8ba83fecc2fb675c10a');
+      const res = await axios.get('/api/posts/profile/' + username);
       setPosts(res.data);
     }
     fetchPosts();

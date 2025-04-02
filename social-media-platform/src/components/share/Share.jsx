@@ -10,6 +10,7 @@ import axios from 'axios';
 const Share = () => {
   const PF = import.meta.env.VITE_PUBLIC_FOLDER;
   const { currentUser } = useContext(UserContext);
+  console.log(currentUser);
   const [post, setPost] = useState({
     desc: "",
     img: "",
