@@ -3,6 +3,7 @@ import './login.css'
 import axios from 'axios'
 import { UserContext } from '../../UserContext';
 import { useNavigate } from 'react-router-dom'; //for routing
+import Register from '../register/Register';
 
 const Login = () => {
   const [email, setEmail] = useState('');
