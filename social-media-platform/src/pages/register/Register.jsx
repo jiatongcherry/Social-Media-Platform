@@ -27,7 +27,9 @@ const Register = () => {
         password,
         city: "hong kong",
         from: "hong kong",
-        relationship: 0
+        relationship: 0,
+        profilePicture: "person/default.jpg",
+        coverPicture: 'post/3.jpg'
       });
       localStorage.setItem('currentUser', JSON.stringify(response.data));
       setCurrentUser(response.data);
