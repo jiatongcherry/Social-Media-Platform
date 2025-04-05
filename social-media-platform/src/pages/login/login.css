@@ -8,9 +8,14 @@
 }
 
 .loginWrapper {
-  width: 70%;
-  height: 70%;
+  width: 80%; /* 调整白色框宽度为80% */
+  max-width: 1200px; /* 增加最大宽度限制 */
+  height: 80%; /* 增大高度比例 */
   display: flex;
+  border-radius: 15px; /* 添加圆角 */
+  background-color: white; /* 白色背景 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+  overflow: hidden; /* 防止内容溢出 */
 }
 
 .loginLeft,
@@ -19,84 +24,92 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 20px; /* 增加左右内边距 */
 }
 
 .loginLogo {
-  font-size: 50px;
+  font-size: 60px; /* 放大标题字体 */
   font-weight: 800;
   color: #1775ee;
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* 增加间距 */
 }
 
 .loginDesc {
   font-size: 24px;
+  color: #555; /* 更柔和的颜色 */
 }
 
 .loginBox {
-  height: 300px;
-  padding: 20px;
+  width: 90%; /* 调整宽度 */
+  padding: 40px; /* 增大内边距 */
   background-color: white;
-  border-radius: 10px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 20px; /* 增加子元素之间的空隙 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
 }
 
-.loginEmail {
-  width: 80%;
-  height: 50px;
-  border-radius: 10px;
-  border: 1px solid gray;
-  font-size: 18px;
-  padding-left: 20px;
-  margin: 10px;
-}
-
+.loginEmail,
 .loginPwd {
-  width: 80%;
-  height: 50px;
-  border-radius: 10px;
-  border: 1px solid gray;
-  font-size: 18px;
-  padding-left: 20px;
-  margin: 10px;
+  width: 95%; /* 增大输入框宽度 */
+  height: 60px; /* 保持高度 */
+  border-radius: 10px; /* 圆角 */
+  border: 1px solid #ccc; /* 边框颜色 */
+  font-size: 20px; /* 字体大小 */
+  padding-left: 20px; /* 内边距 */
+  box-sizing: border-box; /* 避免宽度问题 */
+  margin: 0; /* 移除外边距，使用父容器的 gap 控制 */
 }
 
-.loginInput:focus {
+.loginEmail:focus,
+.loginPwd:focus {
   outline: none;
+  border-color: #1775ee; /* 聚焦时边框高亮 */
+  box-shadow: 0 0 5px rgba(23, 117, 238, 0.5); /* 聚焦时添加阴影 */
 }
 
 .loginButton {
-  height: 50px;
+  height: 60px; /* 增加高度 */
   border-radius: 10px;
   border: none;
   background-color: #1775ee;
   color: white;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 22px; /* 增大字体 */
+  font-weight: 600;
   cursor: pointer;
-  width: 80%;
-  margin-top: 30px;
-  margin-left: 20px;
+  width: 90%; /* 调整宽度 */
+  margin-top: 20px; /* 调整顶部间距 */
+  transition: background-color 0.3s ease;
+}
+
+.loginButton:hover {
+  background-color: #145dbf; /* 悬停时改变背景颜色 */
 }
 
 .loginForgot {
   text-align: center;
   color: #1775ee;
   cursor: pointer;
+  font-size: 16px; /* 调整字体大小 */
 }
 
 .loginRegisterButton {
-  width: 60%;
-  align-self: center;
-  height: 50px;
+  width: 80%; /* 调整宽度 */
+  height: 60px; /* 调整高度 */
   border-radius: 10px;
   border: none;
   background-color: #3ca827;
   color: white;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 22px; /* 增大字体 */
+  font-weight: 600;
   cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.loginRegisterButton:hover {
+  background-color: #36a420; /* 悬停时背景色变化 */
 }

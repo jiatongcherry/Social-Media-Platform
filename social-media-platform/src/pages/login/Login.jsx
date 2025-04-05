@@ -61,7 +61,7 @@ const Login = () => {
               <button className="loginButton" type="submit">Log In</button>
             </form>
             <span className="loginForgot">Forget Password?</span>
-            <button className='loginRegisterButton'>
+            <button className='loginRegisterButton' onClick={() => navigate('/register')} >
               Create a New Account
             </button>
           </div>
