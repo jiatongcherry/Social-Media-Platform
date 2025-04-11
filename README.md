@@ -23,7 +23,8 @@ The application provides core social functionalities such as user authentication
 
   You can view a live demo of the application at: [Live Demo](http://47.236.113.174:5173/)
   
-  *For testing:*
+  *For testing, log in with the following account*
+  
   Email: john@gmail.com
   Pwd: 123456
 
