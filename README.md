@@ -36,7 +36,7 @@ The application provides core social functionalities such as user authentication
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/Social-Media-Platform.git
+   git clone https://github.com/jiatongcherry/Social-Media-Platform.git
 
 2. Navigate to the backend directory and install dependencies:
 
