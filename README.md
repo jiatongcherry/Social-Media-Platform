@@ -41,7 +41,6 @@ The application provides core social functionalities such as user authentication
   2. create a project
      ```bash
      npx create-next-app@latest --javascript social-media-platform
-   
       
 ## Installation
 
