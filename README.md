@@ -43,6 +43,7 @@ The application provides core social functionalities such as user authentication
      npx create-next-app@latest --javascript social-media-platform
   3. create backend
      https://medium.com/@ibrahimhz/creating-your-first-backend-with-node-js-step-by-step-guide-892769af4cb0
+     remember to add "type": "module" into package.json file, otherwise we cannot use "import"
 ## Installation
 
 1. Clone the repository:
