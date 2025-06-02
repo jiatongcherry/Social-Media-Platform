@@ -37,9 +37,9 @@ The application provides core social functionalities such as user authentication
      ```bash
      node -v   npm -v
   node.js install: https://nodejs.org/en/download/
+  
   2. create a project
      ```bash
-     
      npx create-next-app@latest --javascript social-media-platform
    
       
