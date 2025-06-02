@@ -32,6 +32,17 @@ The application provides core social functionalities such as user authentication
 
    You can view the API documentation at: [Swagger UI](http://47.236.113.174:8800/api-docs)
 
+## Pre-requests
+  1. check node and npm
+     ```bash
+     node -v   npm -v
+  node.js install: https://nodejs.org/en/download/
+  2. create a project
+     ```bash
+     
+     npx create-next-app@latest --javascript social-media-platform
+   
+      
 ## Installation
 
 1. Clone the repository:
